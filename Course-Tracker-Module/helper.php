@@ -2,8 +2,6 @@
 
 defined('_JEXEC') or die;
 
-//defined( '_JLMS_EXEC' ) or die( 'Restricted access' );
-
 /**
  * File       helper.php
  * Author     Nephi Andersen | support@pcturnaround.com | http://pcturnaround.com

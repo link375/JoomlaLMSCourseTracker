@@ -1,8 +1,6 @@
-<?php 
+<?php
 
 defined('_JEXEC') or die;
-
-//defined( '_JLMS_EXEC' ) or die( 'Restricted access' );
 
 /**
  * File       mod_jlms_course_tracker.php
