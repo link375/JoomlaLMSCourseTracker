@@ -43,18 +43,23 @@ defined('_JEXEC') or die;
 </style>
 
 
-<!-- html progress bar without values -->
+
+<!-- html progressbar -->
 
 <div id="CourseTracker">
         <div id="progressBarTitle">Course Progress</div>
                 <progress class="progressBar"></progress>
 </div>
 
-<!-- this is where we get our sample text-->
+<!-- values
 <div class="total"></div>
 <div class="current"></div>
+-->
+
 <div class="percent"></div>
+
+<!-- DEBUGGING
 <div class="userID"></div>
 <div class="courseID"></div>
-
-<button id="ajaxButton" type="button">Refresh Progress Bar</button>
+<button id="ajaxButton" type="button">Check Course Progress</button>
+-->
