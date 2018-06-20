@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 defined('_JEXEC') or die;
 
@@ -15,17 +15,16 @@ class modJlmsCourseTrackerHelper
 {
 	public static function getAjax()
 	{
+    // get the course ID from the URI
+    $url = $_SERVER['REQUEST_URI'];
+    $regex = '/(?P<digit>\d+)/';
 
-		
-        // get the course ID from the URI
-        $url = $_SERVER['REQUEST_URI'];
-        $regex = '/(?P<digit>\d+)/';
-
-        if (preg_match($regex, $url, $matches, PREG_OFFSET_CAPTURE)){
-            $courseID = $matches['0'][0];
-        } else {
-        	$courseID = 0;
-        }
+    if (preg_match($regex, $url, $matches, PREG_OFFSET_CAPTURE)){
+        $courseID = $matches['0'][0];
+    }
+		else {
+    	$courseID = 0;
+    }
 
         // get the other variables
 		$user = JLMSFactory::getUser();
@@ -68,10 +67,10 @@ class modJlmsCourseTrackerHelper
 		/*
 		select learnpathIDs where courseID
 		make sure they are in ascending order
-		since the IDs should line up based on when the 
-		path was created by the course creator 
+		since the IDs should line up based on when the
+		path was created by the course creator
 		PHP will clean up duplicates automatically
-		*/ 
+		*/
 		$query = "SELECT learn_path_id"
 		. "\n FROM #__lms_gradebook_lpaths"
 		. "\n WHERE course_id = " . $db->quote($courseID)
@@ -90,7 +89,7 @@ class modJlmsCourseTrackerHelper
 		$db = JFactory::getDbo();
 
 		/*
-		query the db and ask for the ID ordered based on 
+		query the db and ask for the ID ordered based on
 		LP and then ordering - this should make all data consistent for all courses
 		*/
 		$query = "SELECT id"
@@ -139,7 +138,7 @@ class modJlmsCourseTrackerHelper
 		$db->setQuery($query);
 		$currentStep = $db->loadResult();
 		}
-		// this is used if a user has had steps in a higher learning path passed off 
+		// this is used if a user has had steps in a higher learning path passed off
 		elseif ($currentStep == 0 && $cert == NULL){
 			$query = "SELECT MAX(last_step_id)"
 			. "\n FROM #__lms_learn_path_results"
@@ -172,7 +171,7 @@ class modJlmsCourseTrackerHelper
 
 		/***************PREPARE DATA TO PASS TO HTML***********/
 
-		// the total amount of steps 
+		// the total amount of steps
 		$total = count($steps, COUNT_RECURSIVE) - 1;
 
 		// the current step within the steps array indexes
@@ -206,7 +205,7 @@ class modJlmsCourseTrackerHelper
 			'current' => $current,
 			'percent' => $percent,
 			'userID' => $userID,
-            'courseID' => $courseID,
+      'courseID' => $courseID,
 		);
 
 		$results = json_encode($progressBarValues);
