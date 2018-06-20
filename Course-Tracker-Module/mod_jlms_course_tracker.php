@@ -19,7 +19,7 @@ $doc = JFactory::getDocument();
 // js script to run when the button is pressed
 $js = <<<JS
 (function ($) {
-	$(document).on('click', '#ajaxButton', function () {
+	$(document).on('mousemove', function () {
 			request = {
 					'option' : 'com_ajax',
 					'module' : 'jlms_course_tracker',
@@ -45,37 +45,5 @@ $js = <<<JS
 JS;
 
 $doc->addScriptDeclaration($js);
-
-
-// js script to run automatically when the timer reaches 0
-$js2 = <<<JS
-(function ($) {
-	$(document).on('load', '.progressBar', function () {
-			request = {
-					'option' : 'com_ajax',
-					'module' : 'jlms_course_tracker',
-					'format' : 'raw'
-				};
-		$.ajax({
-			type   : 'POST',
-			data   : request,
-			success: function (response) {
-				var results = JSON.parse(response);
-				$('.progressBar').attr('max', results.total);
-				$('.progressBar').attr('value', results.current);
-				$('.current').html("Current step: " + results.current);
-				$('.total').html("Total steps: " + results.total);
-				$('.percent').html("Percent complete: " + results.percent + "%");
-				$('.userID').html("userID: " + results.userID);
-				$('.courseID').html("courseID: " +results.courseID);
-			}
-		});
-		return false;
-	});
-})(jQuery)
-JS;
-
-$doc->addScriptDeclaration($js2);
-
 
 require JModuleHelper::getLayoutPath('mod_jlms_course_tracker');
