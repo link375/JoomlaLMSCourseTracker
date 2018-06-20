@@ -1,0 +1,57 @@
+[
+	{
+		"module": "mod_jlms_lpaths",
+		"allowincoursebuilder": "1",
+		"singleinstance": "1"
+	},
+	{
+		"module": "mod_jlms_quizzes",
+		"allowincoursebuilder": "1",
+		"singleinstance": "1"
+	},
+	{
+		"module": "mod_jlms_upcoming_webinar",
+		"allowincoursebuilder": "1",
+		"singleinstance": "1"
+	},
+	{
+		"module": "mod_jlms_webinars",
+		"allowincoursebuilder": "1",
+		"singleinstance": "1"
+	},
+	{
+		"module": "mod_jlms_course_teacher",
+		"allowincoursebuilder": "1",
+		"singleinstance": "1"
+	},
+	{
+		"module": "mod_jlms_course_subscribe",
+		"allowincoursebuilder": "1",
+		"singleinstance": "1"
+	},
+	{
+		"module": "mod_jlms_new_messages",
+		"allowincoursebuilder": "1",
+		"singleinstance": "1"
+	},
+	{
+		"module": "mod_jlms_recent_documents",
+		"allowincoursebuilder": "1",
+		"singleinstance": "1"
+	},
+	{
+		"module": "mod_jlms_courses",
+		"allowincoursebuilder": "1",
+		"singleinstance": "1"
+	},
+	{
+		"module": "mod_custom",
+		"allowincoursebuilder": "1"
+	},
+	{
+                "module": "mod_jlms_course_tracker",
+                "allowincoursebuilder": "1",
+		"singleinstance": "1"
+        }
+
+]	
