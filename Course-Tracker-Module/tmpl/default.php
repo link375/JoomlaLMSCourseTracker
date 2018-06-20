@@ -41,24 +41,24 @@ defined('_JEXEC') or die;
 
         /* Firefox */
         border: none;
-        background: #EEE;
+        background: #D3D3D3;
         border-radius: 3px;
         box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
 }
 
-.progressBar progress::-webkit-progress-bar {
-        background: #EEE;
+progress::-webkit-progress-bar {
+        background: #D3D3D3;
         box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
         border-radius: 3px;
 }
 
-.progressBar progress::-webkit-progress-value {
-        background-color: #EEE;
+progress::-webkit-progress-value {
+        background-color: #FF9900;
         border-radius: 3px;
 }
 
-.progressBar progress::-moz-progress-bar {
-        background-color: #EEE;
+progress::-moz-progress-bar {
+        background-color: #FF9900;
         border-radius: 3px;
 }
 
