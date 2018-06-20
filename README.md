@@ -61,7 +61,7 @@ Gathers all of the required data from the database (userID, courseID, LearningPa
 
 mod_jlms_course_tracker.php
 
-Actively monitors the DOM for ready, mousedown, mouseup events. When they are executed an ajax call is made the the helper.php file through joomla's com_ajax module. The returned values from the ajax call are then inserted into the html elements on default.php. This file will also set the default.php file as the template to be rendered when the module is in use.
+Actively monitors the DOM for ready, mousedown, mouseup events. When they are executed an ajax call is made to the helper.php file through joomla's com_ajax module. The returned values from the ajax call are then inserted into the html elements on default.php. mod_jlms_course_tracker.php will also set the default.php file as the template to be rendered when the module is in use.
 
 default.php
 
