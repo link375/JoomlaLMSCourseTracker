@@ -35,8 +35,6 @@ $js = <<<JS
 				$('.current').html("Current step: " + results.current);
 				$('.total').html("Total steps: " + results.total);
 				$('.percent').html("Percent complete: " + results.percent + "%");
-				$('.userID').html("userID: " + results.userID);
-				$('.courseID').html("courseID: " +results.courseID);
 			}
 		});
 		return false;
