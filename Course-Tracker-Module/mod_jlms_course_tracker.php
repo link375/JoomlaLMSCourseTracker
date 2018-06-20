@@ -16,7 +16,7 @@ require_once __DIR__ . '/helper.php';
 // Instantiate global document object
 $doc = JFactory::getDocument();
 
-// js script to run when the button is pressed
+// js script to run when the mouse is moved
 $js = <<<JS
 (function ($) {
 	$(document).on('mousemove', function () {
