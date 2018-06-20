@@ -11,13 +11,6 @@ defined('_JEXEC') or die;
  */
 
 ?>
-<!-- OLD STUFF
-<form>
-	<input type="text" name="data">
-	<input type="submit" />
-</form>
-<div class="status"></div>
--->
 
 <!-- CSS STYLING -->
 
@@ -51,7 +44,6 @@ defined('_JEXEC') or die;
         background: #EEE;
         border-radius: 3px;
         box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
-
 }
 
 .progressBar progress::-webkit-progress-bar {
@@ -123,6 +115,7 @@ defined('_JEXEC') or die;
 }
 
 .percent {
+        font-size: 20px;
         font-weight: bold;
         width: 100%;
         text-align: center;
