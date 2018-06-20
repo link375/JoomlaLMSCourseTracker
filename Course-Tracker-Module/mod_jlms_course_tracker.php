@@ -34,8 +34,7 @@ $js = <<<JS
 				$('.progressBar').attr('value', results.current);
 				$('.current').html("Current step: " + results.current);
 				$('.total').html("Total steps: " + results.total);
-				$('.percent').html("Percent complete: " + results.percent + "%");
-			}
+        $('.percent').html(results.percent + "% Complete");			}
 		});
 		return false;
 	});
