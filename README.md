@@ -4,7 +4,7 @@ JoomlaLMS Course Tracker Module for Joomla CMS
 A simple module to show the student how much progress they have completed in
 the current course.
 
-![alt text](https://raw.githubusercontent.com/link375/JoomlaLMSCourseTracker/blob/master/screenshot.PNG)
+![alt text](https://raw.githubusercontent.com//link375/JoomlaLMSCourseTracker/blob/master/screenshot.PNG)
 
 
 =======================
