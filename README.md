@@ -55,7 +55,7 @@ Tells joomla how to handle the package during the installation process.
 
 helper.php
 
-Gathers all of the required data from the database and returns the variables as a json encoded array.
+Gathers all of the required data from the database (userID, courseID, LearningPaths, totalSteps, currentStep) checks for multiple event types during the course and returns the final values as a json encoded array.
 
 mod_jlms_course_tracker.php
 
