@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module"
+           version="3.2"
+           method="upgrade">
+	<name>JLMS Course Tracker</name>
+	<creationDate>June, 2018</creationDate>
+	<author>Nephi Andersen</author>
+	<authorUrl>http://pcturnaround.com</authorUrl>
+	<copyright>Copyright (C) 2018 PCTurnaround llc. All rights reserved.</copyright>
+	<license>GNU General Public License version 2, or later.</license>
+	<version>3.0.2</version>
+	<description>JoomlaLMS Course Tracker</description>
+
+	<files>
+		<filename module="mod_jlms_course_tracker">mod_jlms_course_tracker.php</filename>
+		<filename>helper.php</filename>
+		<folder>tmpl</folder>
+	</files>
+
+</extension>
