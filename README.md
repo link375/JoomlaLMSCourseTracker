@@ -5,6 +5,7 @@ A simple module to show the student how much progress they have completed in
 the current course.
 
 =======================
+
 REQUIREMENTS
 
 Joomla: 3.6.5 or greater
@@ -49,13 +50,17 @@ This will allow you to use the module within JoomlaLMS' courses.
 TECHNICAL INFO
 
 mod_jlms_course_tracker.xml
+
 Tells joomla how to handle the package during the installation process.
 
 helper.php
+
 Gathers all of the required data from the database and returns the variables as a json encoded array.
 
 mod_jlms_course_tracker.php
+
 Actively monitors the DOM for ready, mousedown, mouseup events. When they are executed an ajax call is made the the helper.php file through joomla's com_ajax module. The returned values from the ajax call are then inserted into the html elements on default.php. This file will also set the default.php file as the template to be rendered when the module is in use.
 
 default.php
+
 Creates an html template with inline css to keep it simple
