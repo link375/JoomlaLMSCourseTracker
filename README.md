@@ -24,8 +24,7 @@ or add the following entry to your JSON file
 
 {
       "module": "mod_jlms_course_tracker",
-      "allowincoursebuilder": "1",
-      "singleinstance": "1"
+      "allowincoursebuilder": "1"
 }
 
 This will allow you to use the module within JoomlaLMS' courses.

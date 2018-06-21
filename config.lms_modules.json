@@ -50,8 +50,7 @@
 	},
 	{
                 "module": "mod_jlms_course_tracker",
-                "allowincoursebuilder": "1",
-		"singleinstance": "1"
+                "allowincoursebuilder": "1"
         }
 
 ]	
