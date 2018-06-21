@@ -19,7 +19,7 @@ $doc = JFactory::getDocument();
 // js script to run when the mouse is moved
 $js = <<<JS
 (function ($) {
-	$(document).on('ready mousedown mouseup', function () {
+	$(document).on('ready mouseup', function () {
 			request = {
 					'option' : 'com_ajax',
 					'module' : 'jlms_course_tracker',
