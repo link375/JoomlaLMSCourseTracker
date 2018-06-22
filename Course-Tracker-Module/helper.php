@@ -180,7 +180,8 @@ class modJlmsCourseTrackerHelper
 		$percent = round(($current/$total) * 100);
 
 
-		/**** IF THERE IS ONLY ONE STEP THE INDEX WILL BE 0 FOR THE STEPS ARRAY so set it to 1*********/
+		/**** IF THERE IS ONLY ONE STEP THE INDEX WILL BE 0 FOR THE STEPS ARRAY*********/
+		// set the value to 100% if the user has a cert - otherwise keep it at 0.
 
 		if (is_nan($percent) && $currentStep != NULL && $currentStep == $steps[0] && $cert != NULL){
 			$percent = 100;
