@@ -2,6 +2,7 @@
 
 defined('_JEXEC') or die;
 
+
 /**
  * File       helper.php
  * Author     Nephi Andersen | support@pcturnaround.com | http://pcturnaround.com
@@ -181,7 +182,7 @@ class modJlmsCourseTrackerHelper
 
 		/**** IF THERE IS ONLY ONE STEP THE INDEX WILL BE 0 FOR THE STEPS ARRAY so set it to 1*********/
 
-		if (is_nan($percent) && $currentStep != NULL){
+		if (is_nan($percent) && $currentStep != NULL && $currentStep == $steps[0] && $cert != NULL){
 			$percent = 100;
 			$current = 1;
 			$total = 1;
