@@ -170,15 +170,11 @@ class modJlmsCourseTrackerHelper
 
 		// Check the result or $cert and tell us if the user has completed the course or not
 		if($cert != NULL){
-		$courseCompleted = true;
+						$courseCompleted = true;
+						$currentStep = end($steps);
 		}
 		elseif ($cert == NULL){
-			$courseCompleted = false;
-		}
-
-		// if the course is completed set the current step to be the last index in the $steps array
-		if($courseCompleted == true){
-			$currentStep = end($steps);
+						$courseCompleted = false;
 		}
 
 		/***************PREPARE DATA TO PASS TO HTML***********/
