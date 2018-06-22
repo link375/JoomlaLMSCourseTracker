@@ -158,7 +158,7 @@ class modJlmsCourseTrackerHelper
 										. "\n WHERE course_id = " . $db->quote($courseID)
 										. "\n AND user_id = " . $db->quote($userID)
 										. "\n AND user_status = 1"
-										. "\n ORDER BY lpath_id ASC"
+										. "\n ORDER BY lpath_id DESC"
 										;
 
 										$db->setQuery($query);
