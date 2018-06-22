@@ -107,7 +107,7 @@ class modJlmsCourseTrackerHelper
 
 		/*
 		this is used when a user is in the process of going through the course
-		use this to check for the latest stepID
+		use this to check for the latest stepID in the highest incomplete path
 		if none found it returns NULL
 		*/
 		$query = "SELECT last_step_id"
@@ -122,8 +122,8 @@ class modJlmsCourseTrackerHelper
 		$db->setQuery($query);
 		$currentStep = $db->loadResult();
 
-
 		//this is used when a user has completed a learning path and hasn't completed the course
+		// check the highest step id for the highest complete path
 		if ($currentStep == NULL && $cert == NULL){
 			$query = "SELECT MAX(last_step_id)"
 			. "\n FROM #__lms_learn_path_results"
@@ -133,24 +133,37 @@ class modJlmsCourseTrackerHelper
 			. "\n ORDER BY lpath_id DESC"
 			;
 
-		// set the query and get the data (single field)
 		$db->setQuery($query);
 		$currentStep = $db->loadResult();
 		}
+
 		// this is used if a user has had steps in a higher learning path passed off
+		// this will check for the highest ID in the last incomplete learning path
 		elseif ($currentStep == 0 && $cert == NULL){
-			$query = "SELECT MAX(last_step_id)"
-			. "\n FROM #__lms_learn_path_results"
-			. "\n WHERE course_id = " . $db->quote($courseID)
-			. "\n AND user_id = " . $db->quote($userID)
-			. "\n AND user_status = 0"
-			. "\n ORDER BY lpath_id ASC"
-		;
+						$query = "SELECT MAX(last_step_id)"
+						. "\n FROM #__lms_learn_path_results"
+						. "\n WHERE course_id = " . $db->quote($courseID)
+						. "\n AND user_id = " . $db->quote($userID)
+						. "\n AND user_status = 0"
+						. "\n ORDER BY lpath_id ASC"
+						;
 
+						$db->setQuery($query);
+						$currentStep = $db->loadResult();
 
-		// set the query and get the data (single field)
-		$db->setQuery($query);
-			$currentStep = $db->loadResult();
+						// if a step ID still can't be found then look for an ID in the last completed learning path
+						if ($currentStep == 0){
+										 $query = "SELECT MAX(last_step_id)"
+										. "\n FROM #__lms_learn_path_results"
+										. "\n WHERE course_id = " . $db->quote($courseID)
+										. "\n AND user_id = " . $db->quote($userID)
+										. "\n AND user_status = 1"
+										. "\n ORDER BY lpath_id ASC"
+										;
+
+										$db->setQuery($query);
+										$currentStep = $db->loadResult();
+						}
 		}
 
 		/***SET THE VALUE OF THE PROGRESS BAR TO THE LAST STEP ID IF THE COURSE IS COMPLETED *******/
