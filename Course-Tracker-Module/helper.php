@@ -193,13 +193,23 @@ class modJlmsCourseTrackerHelper
 		$percent = round(($current/$total) * 100);
 
 
+		/****SPECIAL CASES****/
+
+		/***** USER IS ON THE LAST STEP AND DOES NOT HAVE A CERTIFICATE YET SET TO 99% *****/
+
+		if ($cert == NULL && $currentStep == end($steps)){
+						$total = 100;
+						$current = 99;
+						$percent = 99;
+		}
+
 		/**** IF THERE IS ONLY ONE STEP THE INDEX WILL BE 0 FOR THE STEPS ARRAY*********/
 		// set the value to 100% if the user has a cert - otherwise keep it at 0.
 
 		if (is_nan($percent) && $currentStep != NULL && $currentStep == $steps[0] && $cert != NULL){
-			$percent = 100;
-			$current = 1;
-			$total = 1;
+						$percent = 100;
+						$current = 1;
+						$total = 1;
 		}
 
 		/****  USER HASN'T STARTED THE COURSE YET *******/
