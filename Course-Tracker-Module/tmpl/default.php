@@ -13,15 +13,14 @@ defined('_JEXEC') or die;
 ?>
 
 <!-- CSS STYLING -->
-
 <style type="text/css">
 
-#courseTracker {
+.courseTracker {
         width: 100%;
         height: 250px;
 }
 
-#progressBarTitle {
+.progressBarTitle {
         color: #0088cc;
         font-size: 20px;
         text-align: center;
@@ -85,8 +84,8 @@ progress::-moz-progress-bar {
 
 <!-- html progressbar -->
 
-<div id="CourseTracker">
-        <div id="progressBarTitle">Course Progress</div>
+<div class="CourseTracker">
+        <div class="progressBarTitle">Course Progress</div>
                 <progress class="progressBar"></progress>
 </div>
 
