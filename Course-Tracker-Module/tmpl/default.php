@@ -62,46 +62,6 @@ progress::-moz-progress-bar {
         border-radius: 3px;
 }
 
-#ajaxButton {
-        display: inline-block;
-        border-radius: 4px;
-        background-color: #f4511e;
-        border: none;
-        color: #FFFFFF;
-        text-align: center;
-        font-size: 16px;
-        padding: 10px;
-        width: 100%;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: 5px;
-}
-
-#ajaxButton span {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        transition: 0.5s;
-}
-
-#ajaxButton span:after {
-        content: '\00bb';
-        position: absolute;
-        opacity: 0;
-        top: 0;
-        right: -5px;
-        transition: 0.5s;
-}
-
-#ajaxButton:hover span {
-        padding-right: 5px;
-}
-
-#ajaxButton:hover span:after {
-        opacity: 1;
-        right: 0;
-}
-
 .total {
         font-weight: bold;
         width: 100%;
@@ -123,8 +83,6 @@ progress::-moz-progress-bar {
 
 </style>
 
-
-
 <!-- html progressbar -->
 
 <div id="CourseTracker">
@@ -132,15 +90,11 @@ progress::-moz-progress-bar {
                 <progress class="progressBar"></progress>
 </div>
 
-<!-- values
-<div class="total"></div>
-<div class="current"></div>
--->
-
 <div class="percent"></div>
 
 <!-- DEBUGGING
+<div class="total"></div>
+<div class="current"></div>
 <div class="userID"></div>
 <div class="courseID"></div>
-<button id="ajaxButton" type="button">Check Course Progress</button>
 -->

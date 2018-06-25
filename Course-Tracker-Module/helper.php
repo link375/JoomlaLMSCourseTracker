@@ -2,7 +2,6 @@
 
 defined('_JEXEC') or die;
 
-
 /**
  * File       helper.php
  * Author     Nephi Andersen | support@pcturnaround.com | http://pcturnaround.com
@@ -28,7 +27,7 @@ class modJlmsCourseTrackerHelper
         // get the other variables
 		$user = JLMSFactory::getUser();
 		$userID = $user->id;
-		$courseCompleted;
+		$courseCompleted = false;
 		$cert = NULL;
 		$lpaths = array();
 		$steps = array();
