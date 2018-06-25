@@ -29,7 +29,7 @@ class modJlmsCourseTrackerHelper
 		$user = JLMSFactory::getUser();
 		$userID = $user->id;
 		$courseCompleted;
-		$cert;
+		$cert = NULL;
 		$lpaths = array();
 		$steps = array();
 		$currentStep = 0;
@@ -193,7 +193,8 @@ class modJlmsCourseTrackerHelper
 
 		/***** USER IS ON THE LAST STEP AND DOES NOT HAVE A CERTIFICATE YET SET TO 99% *****/
 
-		if ($cert == NULL && $currentStep == end($steps)){
+		if (($cert == NULL && $currentStep == end($steps)) ||
+				($cert == NULL && $percent == 100)){
 						$total = 100;
 						$current = 99;
 						$percent = 99;
