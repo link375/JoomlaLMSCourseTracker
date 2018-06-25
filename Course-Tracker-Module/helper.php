@@ -29,13 +29,12 @@ class modJlmsCourseTrackerHelper
 		$userID = $user->id;
 		$courseCompleted = false;
 		$cert = NULL;
-		$lpaths = array();
 		$steps = array();
 		$currentStep = 0;
 
 		// connect to the database
 		$db = JFactory::getDbo();
-		
+
 		/***************FIGURE OUT IF THE USER HAS COMPLETED THE COURSE *********/
 
 		//select the crt date if it exists
@@ -55,27 +54,6 @@ class modJlmsCourseTrackerHelper
 		if there is a cert date then the user has completed the course
 		*/
 		$cert = $db->loadResult();
-
-		/**************GET THE LEARNING PATHS*************/
-
-		/*
-		select learnpathIDs where courseID
-		make sure they are in ascending order
-		since the IDs should line up based on when the
-		path was created by the course creator
-		PHP will clean up duplicates automatically
-		*/
-		$query = "SELECT learn_path_id"
-		. "\n FROM #__lms_gradebook_lpaths"
-		. "\n WHERE course_id = " . $db->quote($courseID)
-		. "\n ORDER BY learn_path_id ASC"
-		;
-
-		// set the lpaths ID query
-		$db->setQuery($query);
-
-		// get the data from the database and assign it to the lpaths
-		$lpaths = $db->loadColumn();
 
 		/************GET THE LEARNING PATH STEP IDS*********/
 
