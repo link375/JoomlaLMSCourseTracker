@@ -11,8 +11,8 @@ defined('_JEXEC') or die;
  */
 class modJlmsCourseTrackerHelper
 {
-	public static function getAjax()
-	{
+	public static function getAjax(){
+
     // get the course ID from the URI
     $url = $_SERVER['REQUEST_URI'];
     $regex = '/(?P<digit>\d+)/';
@@ -24,7 +24,7 @@ class modJlmsCourseTrackerHelper
     	$courseID = 0;
     }
 
-        // get the other variables
+    // get the other variables
 		$user = JLMSFactory::getUser();
 		$userID = $user->id;
 		$courseCompleted = false;
@@ -33,10 +33,10 @@ class modJlmsCourseTrackerHelper
 		$steps = array();
 		$currentStep = 0;
 
-		/***************FIGURE OUT IF THE USER HAS COMPLETED THE COURSE *********/
-
 		// connect to the database
 		$db = JFactory::getDbo();
+		
+		/***************FIGURE OUT IF THE USER HAS COMPLETED THE COURSE *********/
 
 		//select the crt date if it exists
 		$query = "SELECT crt_date"
@@ -55,7 +55,6 @@ class modJlmsCourseTrackerHelper
 		if there is a cert date then the user has completed the course
 		*/
 		$cert = $db->loadResult();
-
 
 		/**************GET THE LEARNING PATHS*************/
 
