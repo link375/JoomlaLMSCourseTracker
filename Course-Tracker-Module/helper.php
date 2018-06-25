@@ -59,9 +59,6 @@ class modJlmsCourseTrackerHelper
 
 		/**************GET THE LEARNING PATHS*************/
 
-		// connect to the database
-		$db = JFactory::getDbo();
-
 		/*
 		select learnpathIDs where courseID
 		make sure they are in ascending order
@@ -83,9 +80,6 @@ class modJlmsCourseTrackerHelper
 
 		/************GET THE LEARNING PATH STEP IDS*********/
 
-		// connect to the database
-		$db = JFactory::getDbo();
-
 		/*
 		query the db and ask for the ID ordered based on
 		LP and then ordering - this should make all data consistent for all courses
@@ -100,9 +94,6 @@ class modJlmsCourseTrackerHelper
 		$steps = $db->loadColumn();
 
 		/***************GET THE CURRENT STEP *************/
-
-		// connect to the database
-		$db = JFactory::getDbo();
 
 		/*
 		this is used when a user is in the process of going through the course
